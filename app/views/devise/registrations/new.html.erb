@@ -1,0 +1,52 @@
+<div class="col-md-6 mx-auto mb-5">
+  <h1 class="center bold">Sign up</h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="form-group row">
+        <%= f.label :name %>
+        <%= f.text_field :name, class:"form-control col", autofocus: true, autocomplete: "name" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, class:"form-control", autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, class:"form-control", autocomplete: "new-password" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, class:"form-control", autocomplete: "new-password" %>
+    </div>
+      
+    <div class="picture form-group">
+      <%= f.label :upload_your_profile_picture %><br />
+      <%= f.file_field :image, class:"form-control", accept: 'image/jpeg,image/gif,image/png'  %>
+    </div>
+
+    <div class="row">
+      <div class="actions col-md-4">
+        <%= f.submit "Sign up", class:"btn btn-secondary" %>
+      </div>
+    </div>
+    <% end %>
+
+</div>
+
+
+<script type="text/javascript">
+  document.getElementById('user_image').addEventListener('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 1) {
+      alert('Maximum file size is 1 MB. Please choose a smaller file.');
+    }
+  });
+</script>
