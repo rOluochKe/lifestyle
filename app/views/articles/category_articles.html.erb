@@ -1,0 +1,10 @@
+<div class="row">
+  <% @articles.order(id: :desc).each do |article| %>
+    <div class="col-md-3">
+      <div class="jumbotron">
+        <h4 class="display-6"><%= link_to article.title, article_path(article.id) %></h4>
+        <p class="lead"><%= article.content.first(20) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

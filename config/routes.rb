@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-  root 'users#index'
-  devise_for :users
-  resources :users, only: %i[index show]
+  root 'articles#index'
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  
+  resources :users
+
   put '/users/:id', to:  'users#update_img'
-  resources :articles, only: %i[index new create show destroy] do
-    resources :votes, only: %i[create]
-  end
-  resources :comments, only: %i[new create destroy] do
-    resources :votes, only: %i[create]
-  end
+  get '/saw_notification', to: 'users#saw_notification', as: 'saw_notice'
+
+  resources :articles
+  resources :votes
+  resources :comments
+  resources :categories
+  # Custom route
+  get 'category_articles', to: 'articles#category_articles'
 end

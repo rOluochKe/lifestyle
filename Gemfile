@@ -42,6 +42,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Allows access to twitter's Bootstrap framework
 gem 'bootstrap'
 # Jquery Rails
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 
 group :development, :test do
