@@ -34,19 +34,4 @@ module ApplicationHelper
     comment = Comment.find(notice.notice_id)
     Article.find(comment.article_id)
   end
-
-  # Checks whether an article or a comment has already been voted by the
-  # current user returning either true or false
-  def voted?(subject, type)
-    result = false
-    if type == 'article'
-      result = Vote.where(user_id: current_user.id, article_id:
-                          subject.id).exists?
-    end
-    if type == 'comment'
-      result = Vote.where(user_id: current_user.id, comment_id:
-                          subject.id).exists?
-    end
-    result
-  end
 end
