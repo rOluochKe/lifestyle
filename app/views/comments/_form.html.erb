@@ -1,6 +1,6 @@
 <%= form_for @comment = Comment.new do |f| %>
     <%= render "devise/shared/error_messages", resource: @comment %>
-    <%= f.hidden_field :post_id, :value => object.id %>
+    <%= f.hidden_field :article_id, :value => object.id %>
     <div class="form-group">
       <%= f.text_area :content, class: "comment-box", placeholder: "Type your comment..." %>
     </div>

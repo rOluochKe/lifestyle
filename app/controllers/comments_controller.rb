@@ -9,11 +9,12 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     @article = Article.find(params[:comment][:article_id])
     if @comment.save
-      @notification = new_notification(@article.user, @article.id,
-                                       'comment')
+      @notification = new_notification(@article.user, @article.id, 'comment')
       @notification.save
+      redirect_to @article
+    else
+      render 'new'
     end
-    redirect_to @article
   end
 
   def destroy

@@ -21,7 +21,7 @@
             <%= c.content %>
             <% if current_user.id == c.user_id%>
               <%= link_to comment_path(c), method: :delete, data: { confirm: "You sure?" } do %>
-                <i class="fas fa-trash hover-red"></i>
+                <i class="fa fa-trash hover-red"></i>
               <% end %>
             <% end %>
           </div>
