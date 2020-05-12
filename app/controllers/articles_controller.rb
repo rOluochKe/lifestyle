@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   def index
     @categories = Category.all
-
     @articles = Article.all
 
     cat = params[:cat]
@@ -9,7 +8,7 @@ class ArticlesController < ApplicationController
                   Article.where(category_id: cat)
                 else
                   Article.all
-                end
+                end                   
   end
 
   def show

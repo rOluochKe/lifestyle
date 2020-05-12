@@ -7,7 +7,7 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="container-fluid main mt-3">
+    <div class="container-fluid main mt-3 mb-4">
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>

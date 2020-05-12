@@ -21,7 +21,7 @@
   <% @articles.order(id: :desc).limit(4).each do |article| %>
     <div class="col-md-3">
       <div class="jumbotron category-image" style="background-image: url(<%= article.image %>)">
-        <h3 class="category-title"><%= link_to article.category_id, category_articles_path(article.id) %></h3>
+        <h3 class="category-title"><%= link_to article.category_id, article_path(article.id) %></h3>
         <h4 class="article-category-title"><%= link_to article.title, article_path(article.id) %></h4>
       </div>
     </div>

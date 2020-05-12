@@ -1,11 +1,18 @@
-<div class="row">
+<div class="row main-cat-content">
   <% @articles.order(id: :desc).each do |article| %>
-    <div class="col-md-3">
-      <div class="jumbotron">
-        <h3 class="display-6"><%= link_to article.category_id, category_articles_path(article.id) %></h3>
-        <h4 class="display-6"><%= link_to article.title, article_path(article.id) %></h4>
-        <p class="lead"><%= article.content.first(150) %></p>
-        <p><%= link_to 'Read more', article_path(article.id) %></p>
+    <div class="col-md-6">
+      <div class="row between-cat-content">
+        <div class="col-md-6 join-jumbotron">
+          <div class="jumbotron category-art-image" style="background-image: url(<%= article.image %>)"></div>
+        </div>
+        <div class="col-md-6">
+          <div class="jumbotron category-art-image remove-margin">
+            <h3 class="display-6 underline"><%= link_to article.category_id, article_path(article.id) %></h3>
+            <h4 class="display-6 title-category"><%= link_to article.title, article_path(article.id) %></h4>
+            <p class="lead cat-text"><%= article.content.first(200) %></p>
+            <p><%= link_to 'Read more', article_path(article.id) %></p>
+          </div>        
+        </div>
       </div>
     </div>
   <% end %>
