@@ -1,24 +1,18 @@
-<%= form_for @article do |f| %>
+<%= form_for(@article) do |f| %>
+  <%= render "devise/shared/error_messages", resource: @article %>
+
   <%= f.label :title %>
-  <%= f.text_field :title, size: "10x1", class: "form-control" %>
+  <%= f.text_field :title, size: "10x1", class: "form-control" %><br/>
 
   <%= f.label :content %>
-  <%= f.text_area :content, size: "10x5", class: "form-control" %>
+  <%= f.text_area :content, size: "10x10", class: "form-control" %><br/>
 
-  <%= f.label :upload_your_profile_picture %><br />
-  <%= f.file_field :image, class:"form-control", accept: 'image/jpeg,image/gif,image/png'  %>
+  <%= f.label :ImageURL %><br />
+  <p>Allow an image in your article by entering a link to the image</p>
+  <%= f.text_field :image, placeholder: "http://placekitten.com/1217/400", class:"form-control" %><br/>
 
-  <%= f.select :category_id, Category.all.map {|c| [c.category, c.id]} %>
+  <%= f.label :category_id %><br />
+  <%= f.select(:category_id, options_for_select(Category.all.map {|c| [c.category, c.id]}), {}, {class: "form-control"}) %><br/>
 
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= f.submit("Submit Article", class: "btn btn-primary" ) %>
 <% end %>
-
-
-<script type="text/javascript">
-  document.getElementById('user_image').addEventListener('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 1) {
-      alert('Maximum file size is 1 MB. Please choose a smaller file.');
-    }
-  });
-</script>

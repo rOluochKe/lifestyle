@@ -1,55 +1,65 @@
-<div class="col-md-7 mx-auto card-lg bg-light shadow">
+<div class="container-fluid article">
+  <div class="row">
 
-  <div class="container">
-    <div class="row mt-3">
-      <div class="ml-2">
+    <div class="col-md-2">
       <% if object.user.image %>
         <%= image_tag(object.user.image.url, class: "img-profile")%>
       <%end%>
-      </div>
-      <div class="mt-2">
-        <div class="col font-weight-bold">
-          <%= link_to user_path(object.user), class: "font-raleway" do%>
-            <%= object.user.full_name %>
-          <%end%>
-        </div>
-        <div class="col size-12">Posted <%= distance_of_time_in_words(object.created_at, Time.now) %> ago</div>
-      </div>
+      <p> 
+        <%= link_to user_path(object.user), class: "user-full-name" do%>
+          <%= object.user.full_name %>
+        <%end%>
+      </p>
     </div>
-  </div>
 
-  <div class="container-fluid mt-4 p-0">
-    <% unless object.image.empty? %>
-      <div class="size-18 text-post">
-        <%= object.content %>
-      </div>
-      <div class="center py-4">
-      image
-      </div>
-
-    <%else%>
-        <div class="size-18 text-post mb-2 ml-3">
-          <%= object.content %>
+    <div class="col-md-10">
+      <% unless object.image.empty? %>
+        <div class="article-post">
+          <p class="image-article-title"><%= image_tag(object.image, class: "article-fill")%></p>
+          <h2 class="article-title"><%= object.title %></h2>
+          <p><%= object.content %></p>
+          <p><strong>Category: </strong><%= object.category_id %></p>
+          <p><small>Posted <%= distance_of_time_in_words(object.created_at, Time.now) %> ago</small></p>
         </div>
-    <% end %>
-    <% if current_user.id == object.user_id%>
-      <%= link_to article_path(object), method: :delete, data: { confirm: "You sure?" } do %>
-        <i class="fa fa-trash hover-red"></i>
+      <% else %>
+        <div class="article-post">
+          <h2 class="article-title"><%= object.title %></h2>
+          <p><%= object.content %></p>
+          <p><small>Posted <%= distance_of_time_in_words(object.created_at, Time.now) %> ago</small></p>
+        </div>
       <% end %>
-    <% end %>
-  </div>
 
-  <div class="border-bottom border-top">
-    <div class="container">
-      <%= render 'votes/vote_articles', object: object%>
-    </div>
-  </div>
-
-  <div class="pl-5 py-2">
-      <div class=""><%= render 'comments/comment', object: object %></div>
-      <div class="col-10 mt-3">
-        <%= render 'comments/form', object: object %>
+      <div class="row">
+        <div class="user-actions">
+          <% if current_user.id == object.user_id %>
+            <%= link_to article_path(object), method: :delete, data: { confirm: "You sure?" } do %>
+              <i class="fa fa-trash hover-red"> Delete Article</i>
+            <% end %>
+          <% end %>
+        </div>
       </div>
+
+      <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <%= render 'votes/vote_articles', object: object%>
+          </div>
+        </div>
+      <hr>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="comments-title">Comments</h3>
+          <%= render 'comments/comment', object: object %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <%= render 'comments/form', object: object %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
-<br>

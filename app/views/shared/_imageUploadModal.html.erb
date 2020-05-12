@@ -9,11 +9,11 @@
 
           <div class="field">
             <%= f.label :Profile_image %><br />
-            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png'  %>
+            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "form-control"  %><br/>
           </div>
 
           <div class="actions">
-            <%= f.submit "Update" %>
+            <%= f.submit "Update", class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>

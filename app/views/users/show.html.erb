@@ -1,24 +1,22 @@
-<h1>
-  <%= @user.full_name%>
-</h1>
-
 <div class="row">
-  <div class=" mx-auto">
-
+  <div class="mx-auto">
     <div class="col-m6 mb-2"> <%= image_tag @user.image.url if @user.image? %> </div>
+    <h1><%= @user.full_name %></h1>
+    <p><%= @user.email %></p>
     <% if current_user.id == @user.id %>
       <div class="col-m6">
         <button class= "btn btn-info text-white font-weight-bold" data-toggle="modal" data-target="#imageUploadModal">
           Upload Profile Picture
         </button>
-        <%= render 'shared/imageUploadModal', object: @user%>
+        <%= render 'shared/imageUploadModal', object: @user %>
       </div>
     <%end%>
-
   </div>
 </div>
 
-<h2 class="center mt-5 font-weight-bold border-top pt-5 ">Articles</h2>
-<% @user.articles.each do |p|%>
+<hr>
+
+<h2 class="users-article">My Articles</h2>
+<% @user.articles.each do |p| %>
   <%= render 'articles/article_layout', object: p %>
 <% end %>

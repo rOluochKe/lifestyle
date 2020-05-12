@@ -73,3 +73,5 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: false
 
+Layout/TrailingWhitespace:
+  Enabled: false

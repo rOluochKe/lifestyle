@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_162140) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category"
-    t.integer "priority"
+    t.string "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

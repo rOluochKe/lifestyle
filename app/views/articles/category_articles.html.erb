@@ -2,8 +2,10 @@
   <% @articles.order(id: :desc).each do |article| %>
     <div class="col-md-3">
       <div class="jumbotron">
+        <h3 class="display-6"><%= link_to article.category_id, category_articles_path(article.id) %></h3>
         <h4 class="display-6"><%= link_to article.title, article_path(article.id) %></h4>
-        <p class="lead"><%= article.content.first(20) %></p>
+        <p class="lead"><%= article.content.first(150) %></p>
+        <p><%= link_to 'Read more', article_path(article.id) %></p>
       </div>
     </div>
   <% end %>

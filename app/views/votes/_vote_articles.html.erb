@@ -1,12 +1,12 @@
-<span>
-<%= object.votes.count %>
+<div class="voting-section">
+  <%= object.votes.count %>
 
-<%= link_to article_votes_path(object), class: "text-light", method: :post do %>
-  <% if voted?(object, 'article') %>
-      <button class="btn btn-voted"><i class="fa fa-thumbs-up"></i></button>
-    <% else %>
-      <button class="btn btn-neutral"><i class="fa fa-thumbs-up"></i></button>
-  <% end %>
-<% end %>
-voted
-</span>
+  <%= link_to article_votes_path(object), class: "text-light", method: :post do %>
+    <% if voted?(object, 'article') %>
+        <button class="btn btn-voted"><i class="fa fa-thumbs-up"></i></button>
+      <% else %>
+        <button class="btn btn-neutral"><i class="fa fa-thumbs-up"></i></button>
+      <% end %>
+    <% end %>
+  voted
+</div>

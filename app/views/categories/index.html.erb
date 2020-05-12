@@ -1,68 +1,11 @@
 <div class="row">
-  <div class="col-md-6">
-    <div class="row">
-      <div class="col-md-6">
-          <div class="jumbotron">
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          </div>
-      </div>
-
-      <div class="col-md-6">
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <% @categories.order(id: :desc).each do |category| %>
+    <div class="col-md-3">
+      <div class="jumbotron">
+        <h4 class="display-6"><%= link_to category.category, category_articles_path(:cat => category.id) %> </h4>
+        <p><strong>Priority:</strong> <%= category.priority %></p>
+        <%= link_to 'Delete', category, :method => :delete, :confirm => "Are you sure?" %>
       </div>
     </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="row">
-      <div class="col-md-6">
-          <div class="jumbotron">
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          </div>
-      </div>
-
-      <div class="col-md-6">
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col-md-6">
-    <div class="row">
-      <div class="col-md-6">
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      </div>
-
-      <div class="col-md-6">
-          <div class="jumbotron">
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="row">
-      <div class="col-md-6">
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      </div>
-
-      <div class="col-md-6">
-          <div class="jumbotron">
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <% end %>
+</div> 

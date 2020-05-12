@@ -1,35 +1,25 @@
-    <%object.comments.each do |c|%>
-      <div class=" p-2">
-        <div class="row mt-3">
-          <div class="ml-2">
-          <% if c.user.image %>
-            <%= image_tag(c.user.image.url, class: "img-profile")%>
-          <%end%>
-          </div>
-          <div class="mt-2">
-            <div class="col font-weight-bold">
-              <%= link_to user_path(c.user), class: "font-raleway" do%>
-                <%= c.user.full_name %>
-              <%end%>
-            </div>
-            <div class="col size-12">Posted <%= distance_of_time_in_words(c.created_at, Time.now) %> ago</div>
-          </div>
-        </div>
+<div class="comment-section">
+  <% object.comments.each do |c| %>
+    <p class="comment_text"><%= c.content %></p>
 
-        <div class= "row ml-5 pl-1">
-          <div class="col-auto font-rale text-post">
-            <%= c.content %>
-            <% if current_user.id == c.user_id%>
-              <%= link_to comment_path(c), method: :delete, data: { confirm: "You sure?" } do %>
-                <i class="fa fa-trash hover-red"></i>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="row ml-5 pl-1">
-          <div class="col-auto"><%= render 'votes/vote_comments', object: c%></div>
-        </div>
-        
+    <div class="row">
+      <div class="col-md-9">
+        <p class="the-user">    
+          By <%= link_to user_path(c.user), class: "user-name" do %>
+            <%= c.user.full_name %>
+          <%end%> | 
+          Commented <%= distance_of_time_in_words(c.created_at, Time.now) %> ago
+        </p>
       </div>
-    <%end%>
+      <div class="col-md-3">
+        <p class="delete_comment">
+          <% if current_user.id == c.user_id %>
+            <%= link_to comment_path(c), method: :delete, data: { confirm: "You sure?" } do %>
+              <i class="fa fa-trash hover-red"></i>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

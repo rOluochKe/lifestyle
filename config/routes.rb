@@ -12,11 +12,8 @@ Rails.application.routes.draw do
     resources :votes, only: %i[create]
   end
 
-  resources :comments, only: %i[new create destroy] do
-    resources :votes, only: %i[create]
-  end
-  
-  resources :categories, only: %i[new create destroy]
+  resources :comments, only: %i[new create destroy]
+  resources :categories, only: %i[index new create edit update show destroy]
 
   # Custom route
   get 'category_articles', to: 'articles#category_articles'

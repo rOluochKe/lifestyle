@@ -1,23 +1,28 @@
 <div class="row">
   <div class="col-md-9">
-    <div class="jumbotron">
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    </div>
+    <% @articles.order(id: :desc).limit(1).each do |article| %>
+      <div class="jumbotron main-jumbotron" style="background-image: url(<%= article.image %>)">
+        <div class="main-index-text">
+          <p class="lead lead-title"><%= link_to article.title, article %></p>
+          <p class="body-text"><%= link_to truncate(article.content,:length => 150, :separator => ' '), article %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
 
   <div class="col-md-3">
-    <div class="jumbotron">
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <div class="jumbotron weather-image" style="background-image: url(<%= asset_path('weather') %>)">
+      <p class="lead nairobi">Nairobi, Kenya.</p>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <% @categories.order(id: :desc).limit(4).each do |category| %>
+  <% @articles.order(id: :desc).limit(4).each do |article| %>
     <div class="col-md-3">
-      <div class="jumbotron">
-        <h4 class="display-6"><%= link_to category.category, category_articles_path(:cat => category.id) %> 
+      <div class="jumbotron category-image" style="background-image: url(<%= article.image %>)">
+        <h3 class="category-title"><%= link_to article.category_id, category_articles_path(article.id) %></h3>
+        <h4 class="article-category-title"><%= link_to article.title, article_path(article.id) %></h4>
       </div>
     </div>
   <% end %>

@@ -2,22 +2,31 @@
     <div class="container-fluid">
         <div class="navbar-collapse collapse nav-content order-2">
             <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FASHION</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ENTERTAINMENT</a>
-                </li>
+                <%= link_to 'LIFESTYLE', root_path, class: 'nav-link logo' %>
             </ul>
         </div>
         <ul class="nav navbar-nav text-nowrap flex-row mx-md-auto order-1 order-md-2">
-            <%= link_to 'LIFESTYLE', root_path, class: 'nav-link' %>
-            <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target=".nav-content" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+          <li class="nav-item">
+            <%= link_to 'HOME', root_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'FASHION', root_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'BUSINESS', root_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'SPORTS', root_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'ENTERTAINMENT', root_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'MAGAZINE', root_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'TV', root_path, class: 'nav-link' %>
+          </li>
         </ul>
         <div class="ml-auto navbar-collapse collapse nav-content order-3 order-md-3">
             <ul class="ml-auto nav navbar-nav">
@@ -31,11 +40,31 @@
                     <i class="fa fa-bell"></i>
                     <% end %>
                   <% end %>
-                </li>    
+                </li>
+                <li class="nav-item dropdown">
+                  <a id= "navbarDropdown" class="nav-link dropdown-toggle font-raleway" 
+                      href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories <b class="caret"></b>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <%= link_to "Create Category", new_category_path, class: "dropdown-item font-raleway" %>
+                    <%= link_to "All Categories", categories_path, class: "dropdown-item font-raleway" %>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a id= "navbarDropdown" class="nav-link dropdown-toggle font-raleway" 
+                      href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Articles <b class="caret"></b>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <%= link_to "Create Article", new_article_path, class: "dropdown-item font-raleway" %>
+                    <%= link_to "View Articles", articles_path, class: "dropdown-item font-raleway" %>
+                  </div>
+                </li>                                  
                 <li class="nav-item dropdown">
                     <a id= "navbarDropdown" class="nav-link dropdown-toggle font-raleway" 
                         href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Account <b class="caret"></b>
+                      My Account <b class="caret"></b>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <%= link_to "My Profile", user_path(current_user), class: "dropdown-item font-raleway" %>
@@ -45,7 +74,7 @@
                   <% else %>
                     <%= link_to 'LOGIN', new_user_session_path, class: 'nav-link' %>
                     <%= link_to 'REGISTER', new_user_registration_path, class: 'nav-link' %>
-                <% end %> 
+                <% end %>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa fa-search"></i></a>
                 </li>
