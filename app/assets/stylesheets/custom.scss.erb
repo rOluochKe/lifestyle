@@ -6,6 +6,8 @@ body {
   font-size: 15px;
   font-weight: 400;
   color: #3b4246;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -93,10 +95,11 @@ a:hover, a:active, a:focus {
 }
 
 .bg-dark {
-  background-color: #4e443e !important;
+  background-color: #fff !important;
   font-size: 16px !important;
   line-height: 18px !important;
   font-weight: 500;
+  border-bottom: 1px solid #ded9d9;
 }
 
 .logo {
@@ -105,7 +108,12 @@ a:hover, a:active, a:focus {
 }
 
 a.nav-link {
-  color: #fff !important;
+  color: #000 !important;
+}
+
+i.fa.fa-bell,
+i.fa.fa-bell-slash {
+    color: #000;
 }
 
 .jumbotron {
@@ -114,11 +122,14 @@ a.nav-link {
 
 .main-jumbotron, .weather-image {
   width: 100%;
-  height: 400px;
+  height: 470px;
 }
 
 .weather-image {
   background-image: url(<%= asset_path('weather') %>);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .nairobi {
@@ -131,11 +142,14 @@ a.nav-link {
 .category-image {
   width: 100%;
   height: 250px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .main-index-text {
   position: relative;
-  top: 220px;
+  top: 290px;
 }
 
 .lead-title {
@@ -174,7 +188,6 @@ a.nav-link {
 
 .main-cat-content {
   margin: 0 auto;
-  margin-left: 20px;
 }
 
 .join-jumbotron {
@@ -199,5 +212,53 @@ a.nav-link {
 }
 
 .between-cat-content {
+  margin-bottom: -32px;
+}
+
+.img-bg-fix {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 470px;
+}
+
+.article-fill {
+  height: 450px;
+}
+
+.footer-nav {
+    background: #4e443e !important;
+}
+
+a.nav-link.footer-link {
+  color: #fff !important;
+}
+
+i.fa.fa-twitter,
+i.fa.fa-instagram,
+i.fa.fa-facebook {
+  background: #fd622b;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+i.fa.fa-facebook {
+    padding: 5px 8px;
+}
+
+a.nav-link.footer-link.change-color {
+  color: #fd622b !important;
+}
+
+.container-fluid.main {
+  width: 100% !important;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.remove-padding {
+  padding-right: 0;
+  padding-left: 0;
   margin-bottom: -32px;
 }

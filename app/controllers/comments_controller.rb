@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
       @notification.save
       redirect_to @article
     else
-      render 'new'
+      redirect_to @article
     end
   end
 

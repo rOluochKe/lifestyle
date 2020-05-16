@@ -75,3 +75,6 @@ Style/HashTransformValues:
 
 Layout/TrailingWhitespace:
   Enabled: false
+
+Style/IdenticalConditionalBranches:
+  Enabled: false
