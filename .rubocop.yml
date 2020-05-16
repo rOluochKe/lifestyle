@@ -53,7 +53,7 @@ Layout/TrailingEmptyLines:
   Enabled: false
 
 Layout/SpaceAroundMethodCallOperator:
-  Enabled: false
+  Enabled: true
 
 Lint/RaiseException: 
   Enabled: false
@@ -62,7 +62,7 @@ Lint/StructNewOverride:
   Enabled: false
 
 Style/ExponentialNotation:
-  Enabled: false
+  Enabled: true
 
 Style/HashEachMethods:
   Enabled: false
