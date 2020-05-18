@@ -111,14 +111,6 @@ Category.create!([{
 {
   category: "Entertainment",
   priority: "Moderate"
-},
-{
-  category: "Magazine",
-  priority: "Low"
-},
-{
-  category: "TV",
-  priority: "Moderate"
 }
 ])
 
