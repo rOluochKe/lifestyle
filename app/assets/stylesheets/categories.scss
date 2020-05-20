@@ -1,3 +1,85 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+.nairobi {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+}
+
+.category-image {
+  width: 100%;
+  height: 250px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-index-text {
+  position: relative;
+  top: 290px;
+}
+
+.lead-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.body-text {
+  font-size: 16px;
+}
+
+.body-text > a {
+  color: #fff;
+}
+
+.category-title > a {
+  font-size: 24px;
+  color: #fff;
+  text-decoration: underline;
+  position: relative;
+  top: -30px;
+}
+
+.article-category-title > a {
+  position: relative;
+  top: 90px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.category-art-image {
+  width: 100%;
+  height: 400px;
+  background: #fff;
+}
+
+.main-cat-content {
+  margin: 0 auto;
+}
+
+.join-jumbotron {
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.title-category > a {
+  font-size: 20px;
+  color: #616060;
+}
+
+.underline > a {
+  font-size: 19px;
+  text-decoration: underline;
+}
+
+.cat-text {
+  font-size: 16px;
+  line-height: 26px;
+}

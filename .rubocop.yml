@@ -52,16 +52,10 @@ Layout/MultilineMethodCallIndentation:
 Layout/TrailingEmptyLines:
   Enabled: false
 
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: false
-
 Lint/RaiseException: 
   Enabled: false
 
 Lint/StructNewOverride:
-  Enabled: false
-
-Style/ExponentialNotation:
   Enabled: false
 
 Style/HashEachMethods:
@@ -74,4 +68,7 @@ Style/HashTransformValues:
   Enabled: false
 
 Layout/TrailingWhitespace:
+  Enabled: false
+
+Style/IdenticalConditionalBranches:
   Enabled: false

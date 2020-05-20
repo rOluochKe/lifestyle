@@ -1,3 +1,46 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+.article-fill {
+  height: 450px;
+}
+
+.footer-nav {
+    background: #4e443e !important;
+}
+
+a.nav-link.footer-link {
+  color: #fff !important;
+}
+
+i.fa.fa-twitter,
+i.fa.fa-instagram,
+i.fa.fa-facebook {
+  background: #fd622b;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+i.fa.fa-facebook {
+    padding: 5px 8px;
+}
+
+a.nav-link.footer-link.change-color {
+  color: #fd622b !important;
+}
+
+.container-fluid.main {
+  width: 100% !important;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.remove-padding {
+  padding-right: 0;
+  padding-left: 0;
+  margin-bottom: -32px;
+}

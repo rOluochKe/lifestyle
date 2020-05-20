@@ -15,7 +15,7 @@
     <div class="col-md-10">
       <% unless object.image.empty? %>
         <div class="article-post">
-          <p class="image-article-title"><%= image_tag(object.image, class: "article-fill")%></p>
+          <p class="image-article-title"><%= image_tag(object.image, class: "article-fill img-bg-fix")%></p>
           <h2 class="article-title"><%= object.title %></h2>
           <p><%= object.content %></p>
           <p><strong>Category: </strong><%= object.category_id %></p>

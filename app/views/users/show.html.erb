@@ -1,6 +1,6 @@
 <div class="row">
   <div class="mx-auto">
-    <div class="col-m6 mb-2"> <%= image_tag @user.image.url if @user.image? %> </div>
+    <div class="col-m6 mt-3 mb-2"> <%= image_tag @user.image.url if @user.image? %> </div>
     <h1><%= @user.full_name %></h1>
     <p><%= @user.email %></p>
     <% if current_user.id == @user.id %>

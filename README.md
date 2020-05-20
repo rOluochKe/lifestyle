@@ -1,16 +1,4 @@
-# Lifestyle Article Project
-
-Capstone projects are solo projects at the end of the each of the Microverse Main Technical Curriculum sections. Building this project is very important for you because:
-- It's a real-world-like project, built with business specifications that will look really nice in my portfolio
-
-
-## Technologies
-
-- HTML 
-- CSS
-- BOOTSTRAP
-- JAVASCRIPT
-- SASS
+# Lifestyle Article Project [LIVE LINK](https://serene-temple-93543.herokuapp.com/)
 - RUBY on RAILS
 
 ## Usage

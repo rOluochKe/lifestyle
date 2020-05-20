@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: %i[new create destroy]
-  resources :categories, only: %i[index new create edit update show destroy]
+  resources :categories, only: %i[index new create edit update show destrexitoy]
 
   # Custom route
   get 'category_articles', to: 'articles#category_articles'
