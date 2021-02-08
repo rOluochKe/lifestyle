@@ -14,7 +14,7 @@ gem 'devise'
 # Faker for database population
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 # To handle images
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'mini_magick'
 # Use omniauth-facebook gem allows Facebook login integration
 gem 'omniauth-facebook'
